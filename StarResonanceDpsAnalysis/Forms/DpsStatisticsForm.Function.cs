@@ -43,9 +43,9 @@ namespace StarResonanceDpsAnalysis.Forms
             if (AppConfig.GetConfigExists())
             {
                 AppConfig.ClearPicture = AppConfig.GetValue("UserConfig", "ClearPicture", "1").ToInt();
-                AppConfig.NickName = AppConfig.GetValue("UserConfig", "NickName", "未知");
+                AppConfig.NickName = AppConfig.GetValue("UserConfig", "NickName", "Unknown");
                 AppConfig.Uid = (ulong)AppConfig.GetValue("UserConfig", "Uid", "0").ToInt();
-                AppConfig.Profession = AppConfig.GetValue("UserConfig", "Profession", "未知");
+                AppConfig.Profession = AppConfig.GetValue("UserConfig", "Profession", "Unknown Profession");
                 AppConfig.CombatPower = AppConfig.GetValue("UserConfig", "CombatPower", "0").ToInt();
 
                 // 写入本地统计缓存（用于 UI 初始显示）
@@ -366,16 +366,16 @@ namespace StarResonanceDpsAnalysis.Forms
         //白窗体
         Dictionary<string, Color> colorDict = new Dictionary<string, Color>()
         {
-            { "未知", ColorTranslator.FromHtml("#67AEF6") },
+            { "Unknown", ColorTranslator.FromHtml("#67AEF6") },
 
-            { "神射手", ColorTranslator.FromHtml("#fffca3") }, //
-            { "冰魔导师", ColorTranslator.FromHtml("#aaa6ff") }, // 
-            { "巨刃守护者", ColorTranslator.FromHtml("#8ee392") }, // 
-            { "雷影剑士", ColorTranslator.FromHtml("#b8a3ff") }, // 
-            { "灵魂乐手", ColorTranslator.FromHtml("#ff5353") }, // 
-            { "青岚骑士", ColorTranslator.FromHtml("#abfaff") }, // 
-            { "森语者", ColorTranslator.FromHtml("#78ff95") }, // 
-            { "神盾骑士", ColorTranslator.FromHtml("#bfe6ff") }, // 
+            { "Sharpshooter", ColorTranslator.FromHtml("#fffca3") },
+            { "Frost Mage", ColorTranslator.FromHtml("#aaa6ff") },
+            { "Greatblade Guardian", ColorTranslator.FromHtml("#8ee392") },
+            { "Thundershadow Swordsman", ColorTranslator.FromHtml("#b8a3ff") },
+            { "Soul Musician", ColorTranslator.FromHtml("#ff5353") },
+            { "Azure Gale Knight", ColorTranslator.FromHtml("#abfaff") },
+            { "Forest Whisperer", ColorTranslator.FromHtml("#78ff95") },
+            { "Aegis Knight", ColorTranslator.FromHtml("#bfe6ff") },
             { "射线", ColorTranslator.FromHtml("#fffca3") },
             { "协奏", ColorTranslator.FromHtml("#ff5353") },
             { "愈合", ColorTranslator.FromHtml("#78ff95") },
@@ -393,21 +393,38 @@ namespace StarResonanceDpsAnalysis.Forms
             { "岩盾", ColorTranslator.FromHtml("#8ee392") },
             { "格挡", ColorTranslator.FromHtml("#8ee392") },
 
+            // English aliases
+            { "Ray", ColorTranslator.FromHtml("#fffca3") },
+            { "Concerto", ColorTranslator.FromHtml("#ff5353") },
+            { "Heal", ColorTranslator.FromHtml("#78ff95") },
+            { "Rebuke", ColorTranslator.FromHtml("#78ff95") },
+            { "Raging Tone", ColorTranslator.FromHtml("#ff5353") },
+            { "Ice Spear", ColorTranslator.FromHtml("#aaa6ff") },
+            { "Iai", ColorTranslator.FromHtml("#b8a3ff") },
+            { "Moonblade", ColorTranslator.FromHtml("#b8a3ff") },
+            { "Hawk Bow", ColorTranslator.FromHtml("#fffca3") },
+            { "Wolf Bow", ColorTranslator.FromHtml("#fffca3") },
+            { "Empty Shot", ColorTranslator.FromHtml("#abfaff") },
+            { "Heavy Armor", ColorTranslator.FromHtml("#abfaff") },
+            { "Guard Shield", ColorTranslator.FromHtml("#bfe6ff") },
+            { "Light Shield", ColorTranslator.FromHtml("#bfe6ff") },
+            { "Rock Shield", ColorTranslator.FromHtml("#8ee392") },
+            { "Block", ColorTranslator.FromHtml("#8ee392") },
         };
 
         // 黑窗体
         Dictionary<string, Color> blackColorDict = new Dictionary<string, Color>()
         {
-            { "未知", ColorTranslator.FromHtml("#67AEF6") },
+            { "Unknown", ColorTranslator.FromHtml("#67AEF6") },
 
-            { "神射手", ColorTranslator.FromHtml("#8e8b47") }, //
-            { "冰魔导师", ColorTranslator.FromHtml("#79779c") }, // 
-            { "巨刃守护者", ColorTranslator.FromHtml("#537758") }, // 
-            { "雷影剑士", ColorTranslator.FromHtml("#70629c") }, // 
-            { "灵魂乐手", ColorTranslator.FromHtml("#9c5353") }, // 
-            { "青岚骑士", ColorTranslator.FromHtml("#799a9c") }, // 
-            { "森语者", ColorTranslator.FromHtml("#639c70") }, // 
-            { "神盾骑士", ColorTranslator.FromHtml("#9c9b75") }, // 
+            { "Sharpshooter", ColorTranslator.FromHtml("#8e8b47") },
+            { "Frost Mage", ColorTranslator.FromHtml("#79779c") },
+            { "Greatblade Guardian", ColorTranslator.FromHtml("#537758") },
+            { "Thundershadow Swordsman", ColorTranslator.FromHtml("#70629c") },
+            { "Soul Musician", ColorTranslator.FromHtml("#9c5353") },
+            { "Azure Gale Knight", ColorTranslator.FromHtml("#799a9c") },
+            { "Forest Whisperer", ColorTranslator.FromHtml("#639c70") },
+            { "Aegis Knight", ColorTranslator.FromHtml("#9c9b75") },
             { "射线", ColorTranslator.FromHtml("#8e8b47") },
             { "协奏", ColorTranslator.FromHtml("#9c5353") },
             { "愈合", ColorTranslator.FromHtml("#639c70") },
@@ -424,6 +441,24 @@ namespace StarResonanceDpsAnalysis.Forms
             { "光盾", ColorTranslator.FromHtml("#9c9b75") },
             { "岩盾", ColorTranslator.FromHtml("#537758") },
             { "格挡", ColorTranslator.FromHtml("#537758") },
+
+            // English aliases
+            { "Ray", ColorTranslator.FromHtml("#8e8b47") },
+            { "Concerto", ColorTranslator.FromHtml("#9c5353") },
+            { "Heal", ColorTranslator.FromHtml("#639c70") },
+            { "Rebuke", ColorTranslator.FromHtml("#639c70") },
+            { "Raging Tone", ColorTranslator.FromHtml("#9c5353") },
+            { "Ice Spear", ColorTranslator.FromHtml("#79779c") },
+            { "Iai", ColorTranslator.FromHtml("#70629c") },
+            { "Moonblade", ColorTranslator.FromHtml("#70629c") },
+            { "Hawk Bow", ColorTranslator.FromHtml("#8e8b47") },
+            { "Wolf Bow", ColorTranslator.FromHtml("#8e8b47") },
+            { "Empty Shot", ColorTranslator.FromHtml("#799a9c") },
+            { "Heavy Armor", ColorTranslator.FromHtml("#799a9c") },
+            { "Guard Shield", ColorTranslator.FromHtml("#9c9b75") },
+            { "Light Shield", ColorTranslator.FromHtml("#9c9b75") },
+            { "Rock Shield", ColorTranslator.FromHtml("#537758") },
+            { "Block", ColorTranslator.FromHtml("#537758") },
         };
         static Bitmap EmptyBitmap(int w = 1, int h = 1)
         {
@@ -434,15 +469,15 @@ namespace StarResonanceDpsAnalysis.Forms
         }
         public static Dictionary<string, Bitmap> imgDict = new Dictionary<string, Bitmap>()
         {
-            { "未知", EmptyBitmap() },
-            { "冰魔导师", new Bitmap(new MemoryStream(Resources.冰魔导师)) },
-            { "巨刃守护者", new Bitmap(new MemoryStream(Resources.巨刃守护者)) },
-            { "森语者", new Bitmap(new MemoryStream(Resources.森语者)) },
-            { "灵魂乐手", new Bitmap(new MemoryStream(Resources.灵魂乐手)) },
-            { "神射手", new Bitmap(new MemoryStream(Resources.神射手)) },
-            { "雷影剑士", new Bitmap(new MemoryStream(Resources.雷影剑士)) },
-            { "青岚骑士", new Bitmap(new MemoryStream(Resources.青岚骑士)) },
-            { "神盾骑士", new Bitmap(new MemoryStream(Resources.神盾骑士)) },
+            { "Unknown", EmptyBitmap() },
+            { "Frost Mage", new Bitmap(new MemoryStream(Resources.冰魔导师)) },
+            { "Greatblade Guardian", new Bitmap(new MemoryStream(Resources.巨刃守护者)) },
+            { "Forest Whisperer", new Bitmap(new MemoryStream(Resources.森语者)) },
+            { "Soul Musician", new Bitmap(new MemoryStream(Resources.灵魂乐手)) },
+            { "Sharpshooter", new Bitmap(new MemoryStream(Resources.神射手)) },
+            { "Thundershadow Swordsman", new Bitmap(new MemoryStream(Resources.雷影剑士)) },
+            { "Azure Gale Knight", new Bitmap(new MemoryStream(Resources.青岚骑士)) },
+            { "Aegis Knight", new Bitmap(new MemoryStream(Resources.神盾骑士)) },
             { "射线",  new Bitmap(new MemoryStream(Resources.冰魔导师)) },
             { "冰矛",  new Bitmap(new MemoryStream(Resources.冰魔导师)) },
 
@@ -467,6 +502,21 @@ namespace StarResonanceDpsAnalysis.Forms
             { "愈合",  new Bitmap(new MemoryStream(Resources.森语者)) },
             { "惩戒",  new Bitmap(new MemoryStream(Resources.森语者)) },
 
+            // English aliases to same icons
+            { "Ray",  new Bitmap(new MemoryStream(Resources.冰魔导师)) },
+            { "Ice Spear",  new Bitmap(new MemoryStream(Resources.冰魔导师)) },
+            { "Concerto",  new Bitmap(new MemoryStream(Resources.灵魂乐手)) },
+            { "Raging Tone",  new Bitmap(new MemoryStream(Resources.灵魂乐手)) },
+            { "Iai",  new Bitmap(new MemoryStream(Resources.雷影剑士)) },
+            { "Moonblade",  new Bitmap(new MemoryStream(Resources.雷影剑士)) },
+            { "Hawk Bow",  new Bitmap(new MemoryStream(Resources.神射手)) },
+            { "Wolf Bow",  new Bitmap(new MemoryStream(Resources.神射手)) },
+            { "Empty Shot",  new Bitmap(new MemoryStream(Resources.青岚骑士)) },
+            { "Heavy Armor",  new Bitmap(new MemoryStream(Resources.青岚骑士)) },
+            { "Guard Shield",  new Bitmap(new MemoryStream(Resources.神盾骑士)) },
+            { "Light Shield",  new Bitmap(new MemoryStream(Resources.神盾骑士)) },
+            { "Rock Shield",  new Bitmap(new MemoryStream(Resources.巨刃守护者)) },
+            { "Block",  new Bitmap(new MemoryStream(Resources.巨刃守护者)) },
 
         };
 
@@ -593,17 +643,19 @@ namespace StarResonanceDpsAnalysis.Forms
                     string totalFmt = Common.FormatWithEnglishUnits(p.Total);
                     string perSec = Common.FormatWithEnglishUnits(Math.Round(p.PerSecond, 1));
 
-                    var iconKey = (p?.Profession is string pr && pr != "未知" && imgDict.ContainsKey(pr)) ? pr
-                                : (p?.SubProfession is string sr && sr != "未知" && imgDict.ContainsKey(sr)) ? sr
-                                : "未知";
+                    var profStr = TranslateToken(p?.Profession ?? "");
+                    var subStr  = TranslateToken(p?.SubProfession ?? "");
+                    var iconKey = (!string.IsNullOrEmpty(profStr) && profStr != "Unknown" && imgDict.ContainsKey(profStr)) ? profStr
+                                : (!string.IsNullOrEmpty(subStr) && subStr != "Unknown" && imgDict.ContainsKey(subStr)) ? subStr
+                                : "Unknown";
 
-                    var profBmp = imgDict.TryGetValue(iconKey, out var bmp) ? bmp : imgDict["未知"];
+                    var profBmp = imgDict.TryGetValue(iconKey, out var bmp) ? bmp : imgDict["Unknown"];
 
                     var colorMap = Config.IsLight ? colorDict : blackColorDict;
 
-                    var colorKey = (p?.Profession is string pr2 && pr2 != "未知" && colorMap.ContainsKey(pr2)) ? pr2
-                                 : (p?.SubProfession is string sr2 && sr2 != "未知" && colorMap.ContainsKey(sr2)) ? sr2
-                                 : "未知";
+                    var colorKey = (!string.IsNullOrEmpty(profStr) && profStr != "Unknown" && colorMap.ContainsKey(profStr)) ? profStr
+                                 : (!string.IsNullOrEmpty(subStr) && subStr != "Unknown" && colorMap.ContainsKey(subStr)) ? subStr
+                                 : "Unknown";
 
                     var color = colorMap.TryGetValue(colorKey, out var c) ? c : ColorTranslator.FromHtml("#67AEF6");
 
@@ -624,7 +676,8 @@ namespace StarResonanceDpsAnalysis.Forms
                     // 只要子流派；没有子流派就用战力；否则只显示昵称
 
 
-                    row[1].Text = $"{p.Nickname}-{p.SubProfession}({p.CombatPower})";
+                    var subDisp = string.IsNullOrEmpty(subStr) ? p.SubProfession : subStr;
+                    row[1].Text = $"{p.Nickname}-{subDisp}({p.CombatPower})";
 
                     row[2].Text = $"{totalFmt} ({perSec})";
                     row[3].Text = share;
@@ -729,10 +782,10 @@ namespace StarResonanceDpsAnalysis.Forms
                     string perSec = Common.FormatWithEnglishUnits(Math.Round(p.TakenPerSec, 1));
                     string share = $"{Math.Round(p.TotalTaken / teamSum * 100d, 0, MidpointRounding.AwayFromZero)}%";
 
-                    // 头像&颜色（沿用“未知”）
-                    var profBmp = imgDict.TryGetValue("未知", out var bmp) ? bmp : imgDict["未知"];
+                    // Avatar & color (fallback to Unknown)
+                    var profBmp = imgDict.TryGetValue("Unknown", out var bmp) ? bmp : imgDict["Unknown"];
                     var colorMap = Config.IsLight ? colorDict : blackColorDict;
-                    var color = colorMap.TryGetValue("未知", out var c) ? c : ColorTranslator.FromHtml("#67AEF6");
+                    var color = colorMap.TryGetValue("Unknown", out var c) ? c : ColorTranslator.FromHtml("#67AEF6");
 
                     if (!DictList.TryGetValue(p.NpcId, out var row))
                     {
@@ -830,9 +883,9 @@ namespace StarResonanceDpsAnalysis.Forms
                     string perSec = Common.FormatWithEnglishUnits(Math.Round(p.NpcOnlyDps, 1));
                     string share = $"{Math.Round(p.DamageToNpc / npcSum * 100d, 0, MidpointRounding.AwayFromZero)}%";
 
-                    var profBmp = imgDict.TryGetValue(p.Profession ?? "未知", out var bmp) ? bmp : imgDict["未知"];
+                    var profBmp = imgDict.TryGetValue(p.Profession ?? "Unknown", out var bmp) ? bmp : imgDict["Unknown"];
                     var colorMap = Config.IsLight ? colorDict : blackColorDict;
-                    var color = colorMap.TryGetValue(p.Profession ?? "未知", out var c) ? c : ColorTranslator.FromHtml("#67AEF6");
+                    var color = colorMap.TryGetValue(p.Profession ?? "Unknown", out var c) ? c : ColorTranslator.FromHtml("#67AEF6");
 
                     if (!DictList.TryGetValue(p.Uid, out var row))
                     {

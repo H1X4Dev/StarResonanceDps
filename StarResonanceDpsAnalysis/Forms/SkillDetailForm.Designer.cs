@@ -812,7 +812,7 @@
             label10.Font = new Font("HarmonyOS Sans SC", 9F);
             label10.Location = new Point(0, 917);
             label10.Name = "label10";
-            label10.Prefix = "温馨提示：";
+            label10.Prefix = "Tip:";
             label10.Size = new Size(1284, 46);
             label10.TabIndex = 25;
             label10.Text = "In Snapshot mode, trend/share/distribution charts are disabled";

@@ -37,6 +37,67 @@ namespace StarResonanceDpsAnalysis.Core
 
     public static class EmbeddedSkillConfig
     {
+        private static string TranslateTokens(string s)
+        {
+            if (string.IsNullOrEmpty(s)) return s;
+            var map = new Dictionary<string, string>
+            {
+                ["幸运一击"] = "Lucky Strike",
+                ["灵魂乐手"] = "Soul Musician",
+                ["森语者"] = "Forest Whisperer",
+                ["雷霆之镰"] = "Thunder Scythe",
+                ["霹雳升龙斩"] = "Thunder Rising Slash",
+                ["月刃回旋"] = "Moonblade Spin",
+                ["月刃"] = "Moonblade",
+                ["雷击"] = "Thunderstrike",
+                ["安可治疗"] = "Encore Healing",
+                ["安可伤害"] = "Encore Damage",
+                ["聚合乐章"] = "Converging Movement",
+                ["炎律狂踏"] = "Flame Stomp",
+                ["烈焰音符"] = "Blazing Notes",
+                ["烈焰狂想"] = "Flame Rhapsody",
+                ["英勇乐章"] = "Valor Movement",
+                ["无限狂想"] = "Infinite Rhapsody",
+                ["休止的治愈"] = "Resting Heal",
+                ["音符"] = "Note",
+                ["炽焰治愈"] = "Blazing Heal",
+                ["激涌五重奏"] = "Surging Quintet",
+                ["愈合节拍"] = "Healing Beat",
+                ["热情挥洒"] = "Zealous Sweep",
+                ["强化热情挥洒"] = "Empowered Zealous Sweep",
+                ["巡演曲"] = "Tour Song",
+                ["掌控藤曼"] = "Vine Control",
+                ["希望结界"] = "Barrier of Hope",
+                ["狂野绽放"] = "Wild Bloom",
+                ["不羁之种"] = "Untamed Seed",
+                ["狂野之种"] = "Wild Seed",
+                ["再生脉冲"] = "Regeneration Pulse",
+                ["生命绽放"] = "Life Bloom",
+                ["滋养"] = "Nourish",
+                ["森之祈愿"] = "Forest Prayer",
+                ["风华翔舞"] = "Graceful Gale",
+                ["风神·破阵之风"] = "Wind God: Formation Break",
+                ["风姿卓绝"] = "Impeccable Wind Stance",
+                ["疾风刺"] = "Gale Thrust",
+                ["螺旋击刺"] = "Spiral Pierce",
+                ["神影螺旋"] = "Divine Spiral",
+                ["破追"] = "Break Pursuit",
+                ["勇气风环"] = "Ring of Courage",
+                ["勇气风环吸血"] = "Ring of Courage (Leech)",
+                ["疾驰锋刃"] = "Rushing Edge",
+                ["龙击炮"] = "Dragon Cannon",
+                ["撕裂"] = "Rend",
+                ["风螺旋"] = "Wind Spiral",
+                ["螺旋引爆"] = "Spiral Detonation",
+                ["翔返"] = "Soaring Return",
+                ["刹那"] = "Instant"
+            };
+            foreach (var kv in map)
+            {
+                s = s.Replace(kv.Key, kv.Value);
+            }
+            return s;
+        }
         public static readonly string Version = "2.0.1";      // ← 更新
         public static readonly string LastUpdated = "2025-01-20"; // ← 更新
 
@@ -120,7 +181,7 @@ namespace StarResonanceDpsAnalysis.Core
             ["230101"] = new SkillDefinition { Name = "聚合乐章/安可治疗相关", Type = SkillType.Heal, Element = ElementType.Fire, Description = "聚合乐章/安可治疗相关" },
             ["230401"] = new SkillDefinition { Name = "安可伤害", Type = SkillType.Damage, Element = ElementType.Fire, Description = "安可伤害" },
             ["230501"] = new SkillDefinition { Name = "无限连奏安可伤害", Type = SkillType.Damage, Element = ElementType.Fire, Description = "无限连奏安可伤害" },
-            ["2031111"] = new SkillDefinition { Name = "幸运一击(灵魂乐手)", Type = SkillType.Damage, Element = ElementType.Light, Description = "幸运一击(灵魂乐手)" },
+            ["2031111"] = new SkillDefinition { Name = "Lucky Strike (Soul Musician)", Type = SkillType.Damage, Element = ElementType.Light, Description = "Lucky Strike (Soul Musician)" },
             ["2306"] = new SkillDefinition { Name = "增幅节拍", Type = SkillType.Damage, Element = ElementType.Fire, Description = "增幅节拍" },
             ["2317"] = new SkillDefinition { Name = "猛烈挥击", Type = SkillType.Damage, Element = ElementType.Fire, Description = "猛烈挥击" },
             ["2321"] = new SkillDefinition { Name = "琴弦叩击", Type = SkillType.Damage, Element = ElementType.Fire, Description = "琴弦叩击" },
@@ -181,7 +242,7 @@ namespace StarResonanceDpsAnalysis.Core
             ["150104"] = new SkillDefinition { Name = "不羁之种", Type = SkillType.Damage, Element = ElementType.Earth, Description = "不羁之种" },
             ["150106"] = new SkillDefinition { Name = "灌注", Type = SkillType.Heal, Element = ElementType.Earth, Description = "灌注" },
             ["150107"] = new SkillDefinition { Name = "灌注", Type = SkillType.Heal, Element = ElementType.Earth, Description = "灌注" },
-            ["2031005"] = new SkillDefinition { Name = "幸运一击(森语者)", Type = SkillType.Damage, Element = ElementType.Light, Description = "幸运一击(森语者)" },
+            ["2031005"] = new SkillDefinition { Name = "Lucky Strike (Forest Whisperer)", Type = SkillType.Damage, Element = ElementType.Light, Description = "Lucky Strike (Forest Whisperer)" },
             ["2202091"] = new SkillDefinition { Name = "治疗链接", Type = SkillType.Heal, Element = ElementType.Earth, Description = "治疗链接" },
             ["2202311"] = new SkillDefinition { Name = "滋养之种", Type = SkillType.Heal, Element = ElementType.Earth, Description = "滋养之种" },
             ["1541"] = new SkillDefinition { Name = "狂野绽放", Type = SkillType.Damage, Element = ElementType.Earth, Description = "狂野绽放" },
@@ -546,6 +607,16 @@ namespace StarResonanceDpsAnalysis.Core
 
 
         };
+
+        static EmbeddedSkillConfig()
+        {
+            // Translate known tokens in skill names/descriptions for English UI
+            foreach (var kv in SkillsByString)
+            {
+                kv.Value.Name = TranslateTokens(kv.Value.Name);
+                kv.Value.Description = TranslateTokens(kv.Value.Description);
+            }
+        }
 
         public static readonly Dictionary<int, SkillDefinition> SkillsByInt = new();
 

@@ -125,7 +125,7 @@ namespace StarResonanceDpsAnalysis.Forms // 定义命名空间：窗体相关代
                 // 立刻刷新该 NPC 的攻击者榜（当前/全程均已在方法内部自动分流）
                 RefreshNpcAttackers(_npcFocusId);
                 // 可选：更新标题
-                pageHeader1.SubText = FormManager.showTotal ? $"全程 · NPC攻击者榜 (NPC:{uid})" : $"当前 · NPC攻击者榜 (NPC:{uid})";
+                pageHeader1.SubText = FormManager.showTotal ? $"Full Session · NPC Attackers (NPC:{uid})" : $"Current · NPC Attackers (NPC:{uid})";
                 return;
             }
 
@@ -248,22 +248,22 @@ namespace StarResonanceDpsAnalysis.Forms // 定义命名空间：窗体相关代
         {
 
 
-            var menulist = new IContextMenuStripItem[] // 构建右键菜单项数组
+            var menulist = new IContextMenuStripItem[] // Context menu items
              { // 数组开始
-                    new ContextMenuStripItem("历史战斗") // 一级菜单：历史战斗
+                    new ContextMenuStripItem("History") // History
                     { // 配置开始
                         IconSvg = Resources.historicalRecords, // 图标
                     }, // 一级菜单配置结束
-                    new ContextMenuStripItem("基础设置"){ IconSvg = Resources.set_up}, // 一级菜单：基础设置
-                    new ContextMenuStripItem("主窗体"){ IconSvg = Resources.HomeIcon, }, // 一级菜单：主窗体
-                    new ContextMenuStripItem("模组配置"){ IconSvg= Resources.moduleIcon }, // 一级菜单：数据显示设置
+                    new ContextMenuStripItem("Settings"){ IconSvg = Resources.set_up},
+                    new ContextMenuStripItem("Home"){ IconSvg = Resources.HomeIcon, },
+                    new ContextMenuStripItem("Module Analysis"){ IconSvg= Resources.moduleIcon },
                     //new ContextMenuStripItem("技能循环监测"), // 一级菜单：技能循环监测
                     //new ContextMenuStripItem(""){ IconSvg = Resources.userUid, }, // 示例：用户 UID（暂不用）
-                    new ContextMenuStripItem("死亡统计"){ IconSvg = Resources.exclude, }, // 一级菜单：统计排除
-                    new ContextMenuStripItem("技能日记"){ IconSvg = Resources.diaryIcon, },
-                    new ContextMenuStripItem("伤害参考"){ IconSvg = Resources.reference, },
-                    new ContextMenuStripItem("打桩模式"){ IconSvg = Resources.Stakes }, // 一级菜单：打桩模式
-                    new ContextMenuStripItem("退出"){ IconSvg = Resources.quit, }, // 一级菜单：退出
+                    new ContextMenuStripItem("Death Statistics"){ IconSvg = Resources.exclude, },
+                    new ContextMenuStripItem("Skill Diary"){ IconSvg = Resources.diaryIcon, },
+                    new ContextMenuStripItem("Damage Reference"){ IconSvg = Resources.reference, },
+                    new ContextMenuStripItem("Dummy Mode"){ IconSvg = Resources.Stakes },
+                    new ContextMenuStripItem("Exit"){ IconSvg = Resources.quit, },
              } // 数组结束
             ; // 语句结束（分号保持）
 
@@ -274,27 +274,26 @@ namespace StarResonanceDpsAnalysis.Forms // 定义命名空间：窗体相关代
 
                 // 回调开始
                 // # 菜单点击回调：根据 Text 执行对应动作
-                switch (it.Text) // 分支根据菜单文本
+                switch (it.Text) // branch by menu text
                 {
-                    case "历史战斗":
+                    case "History":
                         if (FormManager.historicalBattlesForm == null || FormManager.historicalBattlesForm.IsDisposed)
                         {
                             FormManager.historicalBattlesForm = new HistoricalBattlesForm();
                         }
                         FormManager.historicalBattlesForm.Show();
                         break;
-                    // switch 开始
-                    case "基础设置": // 点击“基础设置”
+                    case "Settings":
                         OpenSettingsDialog(); // 打开设置面板
                         break; // 跳出 switch
-                    case "主窗体": // 点击“主窗体”
+                    case "Home":
                         if (FormManager.mainForm == null || FormManager.mainForm.IsDisposed) // 若主窗体不存在或已释放
                         {
                             FormManager.mainForm = new MainForm(); // 创建主窗体
                         }
                         FormManager.mainForm.Show(); // 显示主窗体
                         break; // 跳出 switch
-                    case "模组配置":
+                    case "Module Analysis":
                         if (FormManager.moduleCalculationForm == null || FormManager.moduleCalculationForm.IsDisposed) // 若主窗体不存在或已释放
                         {
                             FormManager.moduleCalculationForm = new ModuleCalculationForm(); // 创建主窗体
@@ -302,21 +301,21 @@ namespace StarResonanceDpsAnalysis.Forms // 定义命名空间：窗体相关代
                         FormManager.moduleCalculationForm.Show(); // 显示主窗体
                         break;
 
-                    case "死亡统计":
+                    case "Death Statistics":
                         if (FormManager.deathStatisticsForm == null || FormManager.deathStatisticsForm.IsDisposed)
                         {
                             FormManager.deathStatisticsForm = new DeathStatisticsForm();
                         }
                         FormManager.deathStatisticsForm.Show();
                         break;
-                    case "技能日记":
+                    case "Skill Diary":
                         if (FormManager.skillDiary == null || FormManager.skillDiary.IsDisposed)
                         {
                             FormManager.skillDiary = new SkillDiary();
                         }
                         FormManager.skillDiary.Show();
                         break;
-                    case "技能循环监测": // 点击“技能循环监测”
+                    case "Skill Rotation Monitor":
                         if (FormManager.skillRotationMonitorForm == null || FormManager.skillRotationMonitorForm.IsDisposed) // 若监测窗体不存在或已释放
                         {
                             FormManager.skillRotationMonitorForm = new SkillRotationMonitorForm(); // 创建窗口
@@ -324,22 +323,22 @@ namespace StarResonanceDpsAnalysis.Forms // 定义命名空间：窗体相关代
                         FormManager.skillRotationMonitorForm.Show(); // 显示窗口
                         //FormGui.SetColorMode(FormManager.skillRotationMonitorForm, AppConfig.IsLight); // 同步主题（明/暗）
                         break; // 跳出 switch
-                    case "数据显示设置": // 点击“数据显示设置”（当前仅保留占位）
+                    case "Data Display Settings":
                         //dataDisplay(); 
                         break; // 占位：后续实现
-                    case "伤害参考":
+                    case "Damage Reference":
                         if (FormManager.rankingsForm == null || FormManager.rankingsForm.IsDisposed) // 若监测窗体不存在或已释放
                         {
                             FormManager.rankingsForm = new RankingsForm(); // 创建窗口
                         }
                         FormManager.rankingsForm.Show(); // 显示窗口
                         break;
-                    case "统计排除": // 点击“统计排除”
+                    case "Exclude Stats":
                         break; // 占位：后续实现
-                    case "打桩模式": // 点击“打桩模式”
+                    case "Dummy Mode":
                         PilingModeCheckbox.Visible = !PilingModeCheckbox.Visible;
                         break; // 跳出 switch
-                    case "退出": // 点击“退出”
+                    case "Exit":
                         System.Windows.Forms.Application.Exit(); // 结束应用程序
                         break; // 跳出 switch
                 } // switch 结束
@@ -362,7 +361,7 @@ namespace StarResonanceDpsAnalysis.Forms // 定义命名空间：窗体相关代
         // # 按钮提示气泡（置顶）
         private void button_AlwaysOnTop_MouseEnter(object sender, EventArgs e) // 鼠标进入置顶按钮时显示提示
         {
-            ToolTip(button_AlwaysOnTop, "置顶窗口"); // 显示“置顶窗口”的气泡提示
+            ToolTip(button_AlwaysOnTop, "Pin window on top");
 
 
         }
@@ -382,7 +381,7 @@ namespace StarResonanceDpsAnalysis.Forms // 定义命名空间：窗体相关代
         // # 按钮提示气泡（清空）
         private void button1_MouseEnter(object sender, EventArgs e) // 鼠标进入“清空”按钮时显示提示
         {
-            ToolTip(button1, "清空当前数据"); // 显示“清空当前数据”的气泡提示
+            ToolTip(button1, "Clear current data");
         }
 
         // # 按钮提示气泡（单次/全程切换）
