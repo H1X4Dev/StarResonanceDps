@@ -102,7 +102,7 @@
             TitleText.Name = "TitleText";
             TitleText.Size = new Size(974, 38);
             TitleText.TabIndex = 27;
-            TitleText.Text = "Settings";
+            TitleText.Text = "BasicSetup";
             TitleText.TextAlign = ContentAlignment.MiddleCenter;
             TitleText.MouseDown += TitleText_MouseDown;
             // 

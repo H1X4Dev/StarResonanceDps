@@ -830,21 +830,21 @@ namespace StarResonanceDpsAnalysis.Core
         static ulong Shr16(ulong v) => v >> 16; // 右移16位得到玩家UID
 
         /// <summary>
-        /// Map profession ID to English display name
+        /// 职业ID映射为职业名称
         /// </summary>
         public static string GetProfessionNameFromId(int professionId) => professionId switch
         {
-            1 => "Thundershadow Swordsman",
-            2 => "Frost Mage",
-            3 => "Purgation Waraxe",
-            4 => "Azure Gale Knight",
-            5 => "Forest Whisperer",
-            9 => "Greatblade Guardian",
-            11 => "Sharpshooter",
-            12 => "Aegis Knight",
-            8 => "Thunderflash Handcannon",
-            10 => "Umbral Ritualist",
-            13 => "Soul Musician",
+            1 => "雷影剑士",
+            2 => "冰魔导师",
+            3 => "涤罪恶火_战斧",
+            4 => "青岚骑士",
+            5 => "森语者",
+            9 => "巨刃守护者",
+            11 => "神射手",
+            12 => "神盾骑士",
+            8 => "雷霆一闪_手炮",
+            10 => "暗灵祈舞_仪刀_仪仗",
+            13 => "灵魂乐手",
             _ => string.Empty,
         };
     }
