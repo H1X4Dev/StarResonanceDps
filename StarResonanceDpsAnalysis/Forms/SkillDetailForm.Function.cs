@@ -28,13 +28,13 @@ namespace StarResonanceDpsAnalysis.Control
 
             table_DpsDetailDataTable.Columns = new AntdUI.ColumnCollection
             {
-                new AntdUI.Column("Name","技能名"){},
-                new AntdUI.Column("Damage","伤害"),
-                new AntdUI.Column("TotalDps","DPS/秒"),
-                new AntdUI.Column("HitCount","命中次数"),
-                new AntdUI.Column("CritRate","暴击率"),
-                new AntdUI.Column("AvgPerHit","平均伤害"),
-                new AntdUI.Column("Percentage","百分比"),
+                new AntdUI.Column("Name","Skill"),
+                new AntdUI.Column("Damage","Damage"),
+                new AntdUI.Column("TotalDps","DPS"),
+                new AntdUI.Column("HitCount","Hits"),
+                new AntdUI.Column("CritRate","Crit Rate"),
+                new AntdUI.Column("AvgPerHit","Avg Damage"),
+                new AntdUI.Column("Percentage","Percent"),
             };
 
             // 绑定数据源：SkillTableDatas.SkillTable（外部维护的数据集合）

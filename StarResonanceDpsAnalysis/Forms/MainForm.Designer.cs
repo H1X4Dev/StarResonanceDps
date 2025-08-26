@@ -54,7 +54,7 @@
             pageHeader_MainHeader.Size = new Size(1191, 42);
             pageHeader_MainHeader.SubText = "";
             pageHeader_MainHeader.TabIndex = 8;
-            pageHeader_MainHeader.Text = "别查我DPS";
+            pageHeader_MainHeader.Text = "Don't Check My DPS";
             // 
             // button_ThemeSwitch
             // 
@@ -104,7 +104,7 @@
             groupBox_About.Size = new Size(1131, 576);
             groupBox_About.TabIndex = 11;
             groupBox_About.TabStop = false;
-            groupBox_About.Text = "关于";
+            groupBox_About.Text = "About";
             // 
             // label_ThankHelpFromTip_2
             // 
@@ -116,7 +116,7 @@
             label_ThankHelpFromTip_2.Name = "label_ThankHelpFromTip_2";
             label_ThankHelpFromTip_2.Size = new Size(244, 24);
             label_ThankHelpFromTip_2.TabIndex = 24;
-            label_ThankHelpFromTip_2.Text = "项目对于本项目的帮助与支持";
+            label_ThankHelpFromTip_2.Text = "for their help and support";
             // 
             // linkLabel_NodeJsProject
             // 
@@ -142,7 +142,7 @@
             label_ThankHelpFromTip_1.Name = "label_ThankHelpFromTip_1";
             label_ThankHelpFromTip_1.Size = new Size(82, 24);
             label_ThankHelpFromTip_1.TabIndex = 22;
-            label_ThankHelpFromTip_1.Text = "在此感谢";
+            label_ThankHelpFromTip_1.Text = "Special thanks to";
             // 
             // label_Copyright
             // 
@@ -180,7 +180,7 @@
             label_OpenSourceTip_2.Name = "label_OpenSourceTip_2";
             label_OpenSourceTip_2.Size = new Size(514, 24);
             label_OpenSourceTip_2.TabIndex = 19;
-            label_OpenSourceTip_2.Text = "中开源，如在使用中遇到问题，或是想要寻求游戏伙伴请加群：";
+            label_OpenSourceTip_2.Text = "is open-sourced. If you have issues or want teammates, join:";
             // 
             // label_OpenSourceTip_1
             // 
@@ -192,7 +192,7 @@
             label_OpenSourceTip_1.Name = "label_OpenSourceTip_1";
             label_OpenSourceTip_1.Size = new Size(82, 24);
             label_OpenSourceTip_1.TabIndex = 18;
-            label_OpenSourceTip_1.Text = "本项目于";
+            label_OpenSourceTip_1.Text = "This project is on";
             // 
             // linkLabel_GitHub
             // 
@@ -217,7 +217,7 @@
             label_SelfIntroduce.Name = "label_SelfIntroduce";
             label_SelfIntroduce.Size = new Size(955, 69);
             label_SelfIntroduce.TabIndex = 16;
-            label_SelfIntroduce.Text = "一款专为《星痕共鸣》玩家打造的战斗数据统计工具。\r\n该工具无需修改游戏客户端，不违反游戏服务条款。该工具旨在帮助玩家更好地理解战斗数据，减少无效提升，提升游戏体验。使用该工具前，请确保不会将数据结果用于战力歧视等破坏游戏社区环境的行为。";
+            label_SelfIntroduce.Text = "A combat data analyzer for Star Resonance.\r\nIt does not modify the client or violate the TOS. It helps players understand combat data and avoid ineffective upgrades. Do not use results for discrimination or to harm the community.";
             // 
             // label_NowVersionDevelopers
             // 
@@ -228,7 +228,7 @@
             label_NowVersionDevelopers.Name = "label_NowVersionDevelopers";
             label_NowVersionDevelopers.Size = new Size(311, 72);
             label_NowVersionDevelopers.TabIndex = 15;
-            label_NowVersionDevelopers.Text = "惊奇猫猫盒 (anying1073: 项目发起者)\r\n露詩 (Rocy-June)\r\n青岚宗王腾";
+            label_NowVersionDevelopers.Text = "Jingqi Maomaohe (anying1073: Initiator)\r\nRocy-June\r\nQinglan Zong Wangteng";
             // 
             // label_NowVersionDevelopersTip
             // 
@@ -238,7 +238,7 @@
             label_NowVersionDevelopersTip.Name = "label_NowVersionDevelopersTip";
             label_NowVersionDevelopersTip.Size = new Size(422, 32);
             label_NowVersionDevelopersTip.TabIndex = 14;
-            label_NowVersionDevelopersTip.Text = "当前版本开发者们（排名不分先后）：";
+            label_NowVersionDevelopersTip.Text = "Current version developers (unordered):";
             // 
             // label_NowVersionNumber
             // 
@@ -259,7 +259,7 @@
             label_NowVersionTip.Name = "label_NowVersionTip";
             label_NowVersionTip.Size = new Size(158, 32);
             label_NowVersionTip.TabIndex = 12;
-            label_NowVersionTip.Text = "当前版本号：";
+            label_NowVersionTip.Text = "Current Version:";
             // 
             // label_AppName
             // 
@@ -269,7 +269,7 @@
             label_AppName.Name = "label_AppName";
             label_AppName.Size = new Size(133, 32);
             label_AppName.TabIndex = 11;
-            label_AppName.Text = "别查我DPS";
+            label_AppName.Text = "Don't Check My DPS";
             // 
             // MainForm
             // 
@@ -286,7 +286,7 @@
             Mode = AntdUI.TAMode.Dark;
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "DPS 统计工具";
+            Text = "DPS Analyzer";
             ForeColorChanged += MainForm_ForeColorChanged;
             pageHeader_MainHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox_AppIcon).EndInit();

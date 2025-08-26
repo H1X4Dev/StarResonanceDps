@@ -48,7 +48,7 @@ namespace StarResonanceDpsAnalysis.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            divider3.Text = "伤害参考";
+            divider3.Text = "Damage Reference";
             get_dps_rank();
         }
 

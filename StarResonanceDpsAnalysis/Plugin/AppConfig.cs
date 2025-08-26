@@ -235,7 +235,7 @@ namespace StarResonanceDpsAnalysis.Plugin
             {
                 if (_damageDisplayType == null)
                 {
-                    var value = GetValue("SetUp", "DamageDisplayType1", "KMB显示");
+                    var value = GetValue("SetUp", "DamageDisplayType1", "KMB");
                     _damageDisplayType = value;
                 }
                 return _damageDisplayType;

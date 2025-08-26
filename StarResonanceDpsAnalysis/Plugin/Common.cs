@@ -531,7 +531,7 @@ namespace StarResonanceDpsAnalysis.Plugin
         /// <returns></returns>
         public static string FormatWithEnglishUnits<T>(T number)
         {
-            if(AppConfig.DamageDisplayType== "KMB显示")
+            if(AppConfig.DamageDisplayType== "KMB")
             {
                 double value = Convert.ToDouble(number);
 
@@ -561,7 +561,7 @@ namespace StarResonanceDpsAnalysis.Plugin
                 return x.ToString("0." + new string('#', Math.Max(0, maxDecimals)));
             }
 
-            string core = abs < 10_000m ? fmt(abs) : fmt(abs / 10_000m) + "万";
+            string core = abs < 10_000m ? fmt(abs) : fmt(abs / 10_000m) + "W";
             return neg ? "-" + core : core;
         }
 

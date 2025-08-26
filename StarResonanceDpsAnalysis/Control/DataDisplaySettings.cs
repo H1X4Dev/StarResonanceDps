@@ -317,10 +317,10 @@ namespace StarResonanceDpsAnalysis.Control
                 BackColor = Color.Transparent
             };
 
-            // 全选按钮
+            // Select All button
             var selectAllBtn = new AntdUI.Button
             {
-                Text = "全选",
+                Text = "Select All",
                 Size = new Size(70, 32),
                 Location = new Point(0, 6),
                 Type = TTypeMini.Primary,
@@ -328,10 +328,10 @@ namespace StarResonanceDpsAnalysis.Control
             };
             selectAllBtn.Click += (s, e) => SetAllCheckboxes(true);
 
-            // 全不选按钮
+            // Deselect All button
             var deselectAllBtn = new AntdUI.Button
             {
-                Text = "全不选",
+                Text = "Deselect All",
                 Size = new Size(70, 32),
                 Location = new Point(80, 6),
                 Type = TTypeMini.Default,
@@ -339,10 +339,10 @@ namespace StarResonanceDpsAnalysis.Control
             };
             deselectAllBtn.Click += (s, e) => SetAllCheckboxes(false);
 
-            // 默认按钮
+            // Default button
             var defaultBtn = new AntdUI.Button
             {
-                Text = "默认",
+                Text = "Default",
                 Size = new Size(70, 32),
                 Location = new Point(160, 6),
                 Type = TTypeMini.Warn,

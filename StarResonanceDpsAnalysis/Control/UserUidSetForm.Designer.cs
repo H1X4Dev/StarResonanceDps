@@ -71,7 +71,7 @@
             input1.Font = new Font("阿里妈妈数黑体", 8F, FontStyle.Bold);
             input1.Location = new Point(72, 308);
             input1.Name = "input1";
-            input1.PrefixText = "职业：";
+            input1.PrefixText = "Profession:";
             input1.Radius = 3;
             input1.SelectionColor = Color.FromArgb(143, 176, 229);
             input1.SelectionStart = 1;
@@ -154,11 +154,11 @@
             // select1
             // 
             select1.Font = new Font("阿里妈妈数黑体", 8F, FontStyle.Bold);
-            select1.Items.AddRange(new object[] { "神射手", "神盾骑士", "雷影剑士", "冰魔导师", "青岚骑士", "森语者", "巨刃守护者", "灵魂乐手", "未知职业" });
+            select1.Items.AddRange(new object[] { "Sharpshooter", "Aegis Knight", "Thundershadow Swordsman", "Frost Mage", "Azure Gale Knight", "Forest Whisperer", "Greatblade Guardian", "Soul Musician", "Unknown Profession" });
             select1.List = true;
             select1.Location = new Point(72, 304);
             select1.Name = "select1";
-            select1.PrefixText = "职业：";
+            select1.PrefixText = "Profession:";
             select1.Size = new Size(327, 78);
             select1.TabIndex = 32;
             // 

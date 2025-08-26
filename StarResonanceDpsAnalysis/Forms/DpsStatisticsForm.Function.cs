@@ -135,7 +135,7 @@ namespace StarResonanceDpsAnalysis.Forms
             // # 步骤 1：前置校验 —— 网络设备索引/可用性检查
             if (AppConfig.NetworkCard < 0)
             {
-                MessageBox.Show("请选择一个网卡设备");
+                MessageBox.Show("Please select a network adapter device");
                 return;
             }
 

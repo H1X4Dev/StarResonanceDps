@@ -388,7 +388,7 @@ namespace StarResonanceDpsAnalysis.Forms // 定义命名空间：窗体相关代
         // # 按钮提示气泡（单次/全程切换）
         private void button3_MouseEnter(object sender, EventArgs e) // 鼠标进入“单次/全程切换”按钮时显示提示
         {
-            ToolTip(button3, "点击切换：单次统计/全程统"); // 显示切换提示（原文如此，保留）
+            ToolTip(button3, "Toggle: Single / Overall");
         }
 
         // 打桩模式定时逻辑
@@ -401,7 +401,7 @@ namespace StarResonanceDpsAnalysis.Forms // 定义命名空间：窗体相关代
 
                     PilingModeCheckbox.Checked = false;
                     timer1.Enabled = false;
-                    var _ = AppMessageBox.ShowMessage("未获取到UID，请换个地图后再进协会", this);
+                    var _ = AppMessageBox.ShowMessage("UID not found. Change map and re-enter the guild.", this);
                     return;
                 }
                 TimeSpan duration = StatisticData._manager.GetCombatDuration();
@@ -411,14 +411,14 @@ namespace StarResonanceDpsAnalysis.Forms // 定义命名空间：窗体相关代
                     timer1.Enabled = false;
 
                     var snapshot = StatisticData._manager.TakeSnapshotAndGet();
-                    var result = AppMessageBox.ShowMessage("打桩完成,是否上传(排行榜仅供娱乐，请勿恶意上传)\n1.如果对自己数据不满意可再次勾选打桩模式重新打桩", this);
+                    var result = AppMessageBox.ShowMessage("Dummy test finished. Upload? (Leaderboard is for fun only; please don’t upload maliciously)\nIf unsatisfied, re-enable Dummy Mode and retry.", this);
 
                     if (result == DialogResult.OK)
                     {
                         bool data = await Common.AddUserDps(snapshot);
                         if (data)
                         {
-                            AntdUI.Modal.open(new AntdUI.Modal.Config(this, "上传成功", "上传成功")
+                            AntdUI.Modal.open(new AntdUI.Modal.Config(this, "Upload Successful", "Upload Successful")
                             {
                                 CloseIcon = true,
                                 Keyboard = false,
@@ -427,7 +427,7 @@ namespace StarResonanceDpsAnalysis.Forms // 定义命名空间：窗体相关代
                         }
                         else
                         {
-                            AntdUI.Modal.open(new AntdUI.Modal.Config(this, "上传失败", "请检查网络状况，服务器暂时不支持外网上传")
+                            AntdUI.Modal.open(new AntdUI.Modal.Config(this, "Upload Failed", "Check your network. The server may not support public uploads currently.")
                             {
                                 CloseIcon = true,
                                 Keyboard = false,
@@ -446,7 +446,7 @@ namespace StarResonanceDpsAnalysis.Forms // 定义命名空间：窗体相关代
 
             if (e.Value)
             {
-                var result = AppMessageBox.ShowMessage("打桩时间为3分钟，需注意以下3点:\n0.:打桩模式开启后只会记录自己的数据\n1.开启后请找协会内最右侧木桩[靠窗的那根]\n2.确保战斗计时为0开启\n3.如果伤害不满意可关闭打桩模式重新勾选\n4.异常数据会被删除\n", this);
+                var result = AppMessageBox.ShowMessage("Dummy Mode lasts 3 minutes. Notes:\n0. Only your data is recorded.\n1. Use the rightmost training dummy in the hall.\n2. Ensure combat timer is 0 when starting.\n3. If unhappy with damage, disable and re-enable Dummy Mode.\n4. Abnormal data will be removed.\n", this);
                 if (result == DialogResult.OK)
                 {
                     DpsTableDatas.DpsTable.Clear();

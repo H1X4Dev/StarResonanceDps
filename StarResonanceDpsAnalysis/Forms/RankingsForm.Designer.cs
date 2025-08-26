@@ -184,15 +184,15 @@
             segmented1.Font = new Font("HarmonyOS Sans SC", 9F, FontStyle.Bold, GraphicsUnit.Point, 134);
             segmented1.Full = true;
             segmented1.IconGap = 0F;
-            segmentedItem1.Text = "全职业";
-            segmentedItem2.Text = "冰魔导师";
-            segmentedItem3.Text = "巨刃守护者";
-            segmentedItem4.Text = "雷影剑士";
-            segmentedItem5.Text = "灵魂乐手";
-            segmentedItem6.Text = "青岚骑士";
-            segmentedItem7.Text = "森语者";
-            segmentedItem8.Text = "神盾骑士";
-            segmentedItem9.Text = "神射手";
+            segmentedItem1.Text = "All Classes";
+            segmentedItem2.Text = "Frost Mage";
+            segmentedItem3.Text = "Greatblade Guardian";
+            segmentedItem4.Text = "Thundershadow Swordsman";
+            segmentedItem5.Text = "Soul Musician";
+            segmentedItem6.Text = "Azure Gale Knight";
+            segmentedItem7.Text = "Forest Whisperer";
+            segmentedItem8.Text = "Aegis Knight";
+            segmentedItem9.Text = "Sharpshooter";
             segmented1.Items.Add(segmentedItem1);
             segmented1.Items.Add(segmentedItem2);
             segmented1.Items.Add(segmentedItem3);
@@ -222,7 +222,7 @@
             button1.Radius = 3;
             button1.Size = new Size(249, 56);
             button1.TabIndex = 35;
-            button1.Text = "伤害参考";
+            button1.Text = "Damage Reference";
             button1.Click += button1_Click;
             // 
             // divider3
@@ -235,7 +235,7 @@
             divider3.OrientationMargin = 1F;
             divider3.Size = new Size(1213, 40);
             divider3.TabIndex = 36;
-            divider3.Text = "伤害参考";
+            divider3.Text = "Damage Reference";
             // 
             // panel1
             // 
@@ -271,7 +271,7 @@
             label2.Name = "label2";
             label2.Size = new Size(1213, 36);
             label2.TabIndex = 37;
-            label2.Text = "以上数据仅供自身职业DPS参考[无需焦虑可能有人吃药了]，切勿用于战力歧视等破坏游戏社区环境行为，一经发现，关闭此功能";
+            label2.Text = "Data is for your class DPS reference only [don’t overthink others may use buffs]. Do not use it for discrimination or harming the community; abuse may disable this feature.";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // RankingsForm
@@ -287,7 +287,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "RankingsForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "伤害参考";
+            Text = "Damage Reference";
             Load += RankingsForm_Load;
             ForeColorChanged += RankingsForm_ForeColorChanged;
             pageHeader1.ResumeLayout(false);

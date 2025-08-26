@@ -277,31 +277,31 @@ namespace StarResonanceDpsAnalysis.Control
         {
             select1.Items.Clear();
             isSelect = true;
-            label3.Text = "伤害信息";
-            label1.Text = "总伤害";
-            label2.Text = "秒伤";
-            label4.Text = "暴击率";
-            label5.Text = "幸运率";
+            label3.Text = "Damage Info";
+            label1.Text = "Total Damage";
+            label2.Text = "DPS";
+            label4.Text = "Crit Rate";
+            label5.Text = "Luck Rate";
             switch (e.Value)
             {
                 case 0:
-                    select1.Items = new AntdUI.BaseCollection() { "按伤害排序", "按秒伤排序", "按命中次数排序", "按暴击率排序" };
+                    select1.Items = new AntdUI.BaseCollection() { "Sort by Damage", "Sort by DPS", "Sort by Hits", "Sort by Crit Rate" };
                     break;
                 case 1:
-                    select1.Items = new AntdUI.BaseCollection() { "按治疗量排序", "按HPS排序", "按命中次数排序", "按暴击率排序" };
-                    label3.Text = "治疗信息";
-                    label1.Text = "总治疗";
-                    label2.Text = "秒治疗";
-                    label4.Text = "暴击率";
-                    label5.Text = "幸运率";
+                    select1.Items = new AntdUI.BaseCollection() { "Sort by Healing", "Sort by HPS", "Sort by Hits", "Sort by Crit Rate" };
+                    label3.Text = "Healing Info";
+                    label1.Text = "Total Healing";
+                    label2.Text = "HPS";
+                    label4.Text = "Crit Rate";
+                    label5.Text = "Luck Rate";
                     break;
                 case 2:
-                    select1.Items = new AntdUI.BaseCollection() { "按承伤排序", "按秒承伤排序", "按受击次数排序", "按暴击率排序" };
-                    label3.Text = "承伤信息";
-                    label1.Text = "总承伤";
-                    label2.Text = "秒承伤";
-                    label4.Text = "最大承伤";
-                    label5.Text = "最小承伤";
+                    select1.Items = new AntdUI.BaseCollection() { "Sort by Taken", "Sort by Taken/s", "Sort by Times Hit", "Sort by Crit Rate" };
+                    label3.Text = "Taken Info";
+                    label1.Text = "Total Taken";
+                    label2.Text = "Taken/s";
+                    label4.Text = "Max Taken";
+                    label5.Text = "Min Taken";
                     break;
             }
 

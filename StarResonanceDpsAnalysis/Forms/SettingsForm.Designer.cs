@@ -136,7 +136,7 @@
             label1.Name = "label1";
             label1.Size = new Size(363, 31);
             label1.TabIndex = 32;
-            label1.Text = "设置";
+            label1.Text = "Settings";
             // 
             // CombatSettingsPanel
             // 
@@ -163,16 +163,16 @@
             // 
             // select2
             // 
-            select2.Items.AddRange(new object[] { "KMB显示", "万显示" });
+            select2.Items.AddRange(new object[] { "KMB", "Wan" });
             select2.List = true;
             select2.Location = new Point(685, 275);
             select2.Name = "select2";
             select2.Radius = 3;
-            select2.SelectedValue = "KBM显示";
+            select2.SelectedValue = "KMB";
             select2.SelectionStart = 5;
             select2.Size = new Size(207, 68);
             select2.TabIndex = 51;
-            select2.Text = "KBM显示";
+            select2.Text = "KMB";
             // 
             // label10
             // 
@@ -181,7 +181,7 @@
             label10.Name = "label10";
             label10.Size = new Size(234, 58);
             label10.TabIndex = 50;
-            label10.Text = "DPS统计伤害显示类型";
+            label10.Text = "DPS damage display format";
             // 
             // slider1
             // 
@@ -202,17 +202,17 @@
             label9.Name = "label9";
             label9.Size = new Size(138, 58);
             label9.TabIndex = 49;
-            label9.Text = "窗体透明度";
+            label9.Text = "Window Opacity";
             // 
             // inputNumber2
             // 
             inputNumber2.Location = new Point(36, 113);
             inputNumber2.Name = "inputNumber2";
-            inputNumber2.PrefixText = "脱战";
+            inputNumber2.PrefixText = "Out-of-Combat";
             inputNumber2.Radius = 3;
             inputNumber2.SelectionStart = 1;
             inputNumber2.Size = new Size(407, 65);
-            inputNumber2.SuffixText = "/秒后清除当前统计";
+            inputNumber2.SuffixText = " s to clear current stats";
             inputNumber2.TabIndex = 46;
             inputNumber2.Text = "5";
             inputNumber2.TextAlign = HorizontalAlignment.Center;
@@ -228,7 +228,7 @@
             label8.Name = "label8";
             label8.Size = new Size(249, 31);
             label8.TabIndex = 45;
-            label8.Text = "脱战清空为当前统计非全程统计";
+            label8.Text = "Clearing after OOC only resets current stats";
             label8.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label5
@@ -238,7 +238,7 @@
             label5.Name = "label5";
             label5.Size = new Size(234, 58);
             label5.TabIndex = 41;
-            label5.Text = "换地图是否清空全程统计";
+            label5.Text = "Clear overall stats when changing map";
             // 
             // switch1
             // 
@@ -280,7 +280,7 @@
             label4.Name = "label4";
             label4.Size = new Size(105, 31);
             label4.TabIndex = 33;
-            label4.Text = "战斗设置";
+            label4.Text = "Combat Settings";
             // 
             // KeySettingsPanel
             // 
@@ -314,7 +314,7 @@
             label6.Name = "label6";
             label6.Size = new Size(198, 31);
             label6.TabIndex = 43;
-            label6.Text = "Delete删除当前键位";
+            label6.Text = "Press Delete to clear current key";
             label6.TextAlign = ContentAlignment.MiddleRight;
             // 
             // input5
@@ -323,7 +323,7 @@
             input5.Font = new Font("HarmonyOS Sans SC", 9F);
             input5.Location = new Point(672, 112);
             input5.Name = "input5";
-            input5.PrefixText = "清空历史键位：";
+            input5.PrefixText = "Clear History Key:";
             input5.Radius = 3;
             input5.ReadOnly = true;
             input5.Size = new Size(220, 65);
@@ -336,7 +336,7 @@
             input4.Font = new Font("HarmonyOS Sans SC", 9F);
             input4.Location = new Point(351, 112);
             input4.Name = "input4";
-            input4.PrefixText = "清空数据键位：";
+            input4.PrefixText = "Clear Data Key:";
             input4.Radius = 3;
             input4.ReadOnly = true;
             input4.Size = new Size(220, 65);
@@ -348,7 +348,7 @@
             input3.Font = new Font("HarmonyOS Sans SC", 9F);
             input3.Location = new Point(36, 200);
             input3.Name = "input3";
-            input3.PrefixText = "开关键位：";
+            input3.PrefixText = "Toggle Key:";
             input3.Radius = 3;
             input3.ReadOnly = true;
             input3.Size = new Size(220, 65);
@@ -361,7 +361,7 @@
             input2.Font = new Font("HarmonyOS Sans SC", 9F);
             input2.Location = new Point(281, 200);
             input2.Name = "input2";
-            input2.PrefixText = "窗体透明键位：";
+            input2.PrefixText = "Transparency Key:";
             input2.Radius = 3;
             input2.ReadOnly = true;
             input2.Size = new Size(220, 65);
@@ -374,7 +374,7 @@
             input1.Font = new Font("HarmonyOS Sans SC", 9F);
             input1.Location = new Point(36, 112);
             input1.Name = "input1";
-            input1.PrefixText = "鼠标穿透键位：";
+            input1.PrefixText = "Mouse Through Key:";
             input1.Radius = 3;
             input1.ReadOnly = true;
             input1.Size = new Size(220, 65);
@@ -410,7 +410,7 @@
             label3.Name = "label3";
             label3.Size = new Size(105, 31);
             label3.TabIndex = 33;
-            label3.Text = "按键设置";
+            label3.Text = "Key Bindings";
             // 
             // BasicSetupPanel
             // 
@@ -439,7 +439,7 @@
             label7.Name = "label7";
             label7.Size = new Size(198, 31);
             label7.TabIndex = 44;
-            label7.Text = "自动设置错误时可手动设置";
+            label7.Text = "If auto-setup fails, set manually";
             label7.TextAlign = ContentAlignment.MiddleRight;
             // 
             // InterfaceComboBox
@@ -449,7 +449,7 @@
             InterfaceComboBox.List = true;
             InterfaceComboBox.Location = new Point(36, 114);
             InterfaceComboBox.Name = "InterfaceComboBox";
-            InterfaceComboBox.PrefixText = "请选择网卡：";
+            InterfaceComboBox.PrefixText = "Select Network Adapter:";
             InterfaceComboBox.Radius = 3;
             InterfaceComboBox.Size = new Size(856, 56);
             InterfaceComboBox.TabIndex = 38;
@@ -484,7 +484,7 @@
             label2.Name = "label2";
             label2.Size = new Size(105, 31);
             label2.TabIndex = 33;
-            label2.Text = "基础设置";
+            label2.Text = "Basic Settings";
             // 
             // panel7
             // 
@@ -572,7 +572,7 @@
             Name = "SettingsForm";
             Opacity = 0.95D;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "基础设置";
+            Text = "Settings";
             Load += SettingsForm_Load;
             ForeColorChanged += SettingsForm_ForeColorChanged;
             pageHeader1.ResumeLayout(false);

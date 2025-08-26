@@ -131,13 +131,13 @@ namespace StarResonanceDpsAnalysis.Forms
             Console.WriteLine($"InterfaceComboBox_SelectedIndexChanged: {InterfaceComboBox.SelectedIndex}");
             if (AppConfig.NetworkCard == InterfaceComboBox.SelectedIndex)
             {
-                Console.WriteLine($"网卡窗口初始化赋值, 或值相等");
+                Console.WriteLine($"Network adapter initialized or unchanged");
                 return;
             }
 
             AppConfig.NetworkCard = InterfaceComboBox.SelectedIndex;
 
-            // 通知MainForm更新网卡设置提示
+            // Notify MainForm to update network adapter tip
             try
             {
                 // var mainForm = Application.OpenForms.OfType<MainForm>().FirstOrDefault();
@@ -145,14 +145,14 @@ namespace StarResonanceDpsAnalysis.Forms
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"更新MainForm网卡设置提示时出错: {ex.Message}");
+                Console.WriteLine($"Error updating MainForm network adapter tip: {ex.Message}");
             }
 
             var result = AppMessageBox.ShowMessage("""
-                    您已更改网卡设置。
+                    You have changed the network adapter setting.
 
-                    请注意，修改网卡后需要重新启动应用程序以使更改生效。
-                    是否立刻重新启动应用程序？
+                    Please note: you need to restart the application for changes to take effect.
+                    Restart the application now?
                     """, this);
             if (result == DialogResult.OK)
             {
@@ -162,7 +162,7 @@ namespace StarResonanceDpsAnalysis.Forms
             }
             else
             {
-                AppMessageBox.ShowMessage("您的网卡设置将在下次启动应用时生效。", this);
+                AppMessageBox.ShowMessage("Your network adapter setting will take effect on next launch.", this);
             }
 
         }

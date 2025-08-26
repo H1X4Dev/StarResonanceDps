@@ -53,7 +53,7 @@ namespace StarResonanceDpsAnalysis.Plugin
         /// <param name="title"></param>
         /// <param name="content"></param>
         /// <param name="type"></param>
-        public static void Modal(Form from, string title, string content, string okText = "确定", string cancelText = "取消", TType type = TType.Info)
+        public static void Modal(Form from, string title, string content, string okText = "OK", string cancelText = "Cancel", TType type = TType.Info)
         {
             AntdUI.Modal.open(new Modal.Config(from, title, content)
             {

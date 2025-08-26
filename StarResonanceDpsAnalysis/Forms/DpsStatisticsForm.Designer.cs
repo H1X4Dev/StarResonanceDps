@@ -79,7 +79,7 @@
             pageHeader1.Size = new Size(632, 30);
             pageHeader1.SubFont = new Font("HarmonyOS Sans SC Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 134);
             pageHeader1.SubGap = 0;
-            pageHeader1.SubText = "当前伤害";
+            pageHeader1.SubText = "Current Damage";
             pageHeader1.TabIndex = 16;
             pageHeader1.Text = "DPS Damage Statistics Table  ";
             // 
@@ -95,7 +95,7 @@
             PilingModeCheckbox.Name = "PilingModeCheckbox";
             PilingModeCheckbox.Size = new Size(120, 30);
             PilingModeCheckbox.TabIndex = 17;
-            PilingModeCheckbox.Text = "打桩模式";
+            PilingModeCheckbox.Text = "Dummy Mode";
             PilingModeCheckbox.TextAlign = ContentAlignment.MiddleCenter;
             PilingModeCheckbox.Visible = false;
             PilingModeCheckbox.CheckedChanged += PilingModeCheckbox_CheckedChanged;
@@ -304,7 +304,7 @@
             NpcTakeDamageButton.Radius = 3;
             NpcTakeDamageButton.Size = new Size(134, 45);
             NpcTakeDamageButton.TabIndex = 4;
-            NpcTakeDamageButton.Text = "承伤";
+            NpcTakeDamageButton.Text = "Taken";
             NpcTakeDamageButton.Click += DamageType_Click;
             // 
             // AlwaysInjuredButton
@@ -320,7 +320,7 @@
             AlwaysInjuredButton.Radius = 3;
             AlwaysInjuredButton.Size = new Size(134, 45);
             AlwaysInjuredButton.TabIndex = 3;
-            AlwaysInjuredButton.Text = "总承伤";
+            AlwaysInjuredButton.Text = "Total Taken";
             AlwaysInjuredButton.Click += DamageType_Click;
             // 
             // TotalTreatmentButton
@@ -335,7 +335,7 @@
             TotalTreatmentButton.Radius = 3;
             TotalTreatmentButton.Size = new Size(134, 45);
             TotalTreatmentButton.TabIndex = 2;
-            TotalTreatmentButton.Text = "总治疗";
+            TotalTreatmentButton.Text = "Total Healing";
             TotalTreatmentButton.Click += DamageType_Click;
             // 
             // TotalDamageButton
@@ -350,7 +350,7 @@
             TotalDamageButton.Radius = 3;
             TotalDamageButton.Size = new Size(134, 45);
             TotalDamageButton.TabIndex = 1;
-            TotalDamageButton.Text = "总伤害";
+            TotalDamageButton.Text = "Total Damage";
             TotalDamageButton.Click += DamageType_Click;
             // 
             // DpsStatisticsForm
@@ -368,7 +368,7 @@
             Name = "DpsStatisticsForm";
             Radius = 3;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "别查我DPS";
+            Text = "Don't Check My DPS";
             FormClosing += DpsStatisticsForm_FormClosing;
             Load += DpsStatistics_Load;
             Shown += DpsStatisticsForm_Shown;

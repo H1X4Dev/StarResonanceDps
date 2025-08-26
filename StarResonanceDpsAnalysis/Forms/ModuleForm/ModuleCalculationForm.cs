@@ -91,7 +91,7 @@ namespace StarResonanceDpsAnalysis.Forms.ModuleForm
             if (MessageAnalyzer.PayloadBuffer.Length == 0)
             {
                 var result = AppMessageBox.ShowMessage("""
-                    请先过图一次在点此按钮
+                    Please change zone once before clicking this button
                     """, this);
                 return;
             }
@@ -179,17 +179,17 @@ namespace StarResonanceDpsAnalysis.Forms.ModuleForm
                 y += TextRenderer.MeasureText(card.RankText ?? "", fontTitle,
                       new Size(contentW, int.MaxValue), TextFormatFlags.WordBreak).Height + card.LineGap;
 
-                // 最高属性等级
-                y += TextRenderer.MeasureText($"最高属性等级 {card.HighestLevel}", fontBody,
+                // Highest attribute level
+                y += TextRenderer.MeasureText($"Highest Attribute Level {card.HighestLevel}", fontBody,
                       new Size(contentW, int.MaxValue), TextFormatFlags.WordBreak).Height + card.LineGap;
 
-                // 综合评分（两段同一行，测一整段足够）
+                // Composite score (measure the full line)
                 string scoreText = string.IsNullOrEmpty(card.Score) ? "—" : card.Score;
-                y += TextRenderer.MeasureText($"综合评分：{scoreText}", fontBody,
+                y += TextRenderer.MeasureText($"Composite Score: {scoreText}", fontBody,
                       new Size(contentW, int.MaxValue), TextFormatFlags.WordBreak).Height + card.SectionGap;
 
-                // 列表标题
-                y += TextRenderer.MeasureText("模组列表：", fontBody,
+                // List title
+                y += TextRenderer.MeasureText("Module List:", fontBody,
                       new Size(contentW, int.MaxValue), TextFormatFlags.WordBreak).Height + card.LineGap;
 
                 // 列表每行（左列宽 = contentW - 右列自然宽 - gap；右列自然宽不换行）
@@ -209,14 +209,14 @@ namespace StarResonanceDpsAnalysis.Forms.ModuleForm
 
                 y += card.SectionGap;
 
-                // 属性分布标题
-                y += TextRenderer.MeasureText("属性分布：", fontBody,
+                // Attribute distribution title
+                y += TextRenderer.MeasureText("Attribute Distribution:", fontBody,
                       new Size(contentW, int.MaxValue), TextFormatFlags.WordBreak).Height + card.LineGap;
 
                 // 属性分布每行
                 foreach (var (name, val) in card.AttrLines ?? Enumerable.Empty<(string Name, int Value)>())
                 {
-                    string line = $"{name}：+{val}";
+                    string line = $"{name}: +{val}";
                     y += TextRenderer.MeasureText(line, fontBody,
                          new Size(contentW, int.MaxValue), TextFormatFlags.WordBreak).Height + 4;
                 }
@@ -264,7 +264,7 @@ namespace StarResonanceDpsAnalysis.Forms.ModuleForm
 
         private void button4_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("装饰用");
+            MessageBox.Show("Decorative");
         }
 
         private void ModuleCalculationForm_ForeColorChanged(object sender, EventArgs e)
